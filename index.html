@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skycast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-weather="cloudy">
+
+  <header class="header">
+    <a class="logo" href="#">
+      <span class="logo-mark" aria-hidden="true">☁</span>
+      <span class="logo-name">Skycast</span>
+    </a>
+
+    <form class="search" role="search">
+      <label class="sr-only" for="city">Search for a city</label>
+      <input id="city" type="search" placeholder="Search for a city">
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="tools">
+      <button class="loc" id="loc" type="button">📍 Use my location</button>
+      <div class="units" role="group" aria-label="Temperature unit">
+        <button type="button" id="unit-c" class="is-active" aria-pressed="true">°C</button>
+        <button type="button" id="unit-f" aria-pressed="false">°F</button>
+      </div>
+    </div>
+
+    <div class="recent" id="recent" aria-label="Recent searches"></div>
+    <p class="status" id="status" role="status"></p>
+  </header>
+
+  <main class="result" aria-live="polite">
+    <h1 class="city" id="city-name">Accra, Ghana</h1>
+    <p class="date" id="date">Monday, 5 October</p>
+
+    <div class="icon" id="icon" aria-hidden="true">⛅</div>
+    <p class="temp" id="temp">29°C</p>
+    <p class="condition" id="condition">Partly cloudy</p>
+    <p class="tip" id="tip">Light layers will be fine today.</p>
+
+    <div class="stats">
+      <div class="stat">
+        <h2>Wind speed</h2>
+        <p class="value"><span id="wind">14</span> <small id="wind-unit">km/h</small></p>
+      </div>
+      <div class="stat">
+        <h2>Humidity</h2>
+        <p class="value"><span id="humidity">72</span> <small>%</small></p>
+      </div>
+    </div>
+
+    <section class="forecast" aria-labelledby="forecast-title">
+      <h2 id="forecast-title">5-day forecast</h2>
+      <ul class="forecast-list" id="forecast"></ul>
+    </section>
+  </main>
+
+
+  <script src="weather.js"></script>
+
+</body>
+</html>
